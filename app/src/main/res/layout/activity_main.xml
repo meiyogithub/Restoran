@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="productSatu"
+            type="com.example.android.restoran.Product" />
+
+        <variable
+            name="productDua"
+            type="com.example.android.restoran.Product" />
+
+        <variable
+            name="productTiga"
+            type="com.example.android.restoran.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_meja"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/pilihmeja"
+                android:layout_width="153dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="cursive"
+                android:text="@string/silahkan_pilih_meja"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mejasatu"
+                android:background="@drawable/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:text="@string/meja_1"
+                android:onClick="mejaSatu"
+                android:textColor="@color/Putih"
+                android:fontFamily="cursive"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mejadua"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/mejadua"
+                android:background="@drawable/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="60dp"
+                android:onClick="mejaDua"
+                android:text="@string/meja_2"
+                android:textColor="@color/Putih"
+                android:fontFamily="cursive"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pilihmeja" />
+
+            <Button
+                android:id="@+id/mejatiga"
+                android:background="@drawable/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:text="@string/meja_3"
+                android:onClick="mejaTiga"
+                android:textColor="@color/Putih"
+                android:fontFamily="cursive"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mejaempat"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/mejaempat"
+                android:background="@drawable/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:text="@string/meja_4"
+                android:onClick="mejaEmpat"
+                android:textColor="@color/Putih"
+                android:fontFamily="cursive"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mejadua"
+                app:layout_constraintVertical_bias="0.103" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="27dp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/nomormeja"
+                android:layout_width="116dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/nomor_meja"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/namaMakanan1"
+                android:layout_width="145dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="@string/nama_makanan"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomormeja" />
+
+            <EditText
+                android:id="@+id/hargaMakanan1"
+                android:layout_width="171dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="145dp"
+                android:ems="10"
+                android:hint="@string/harga"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/namaMakanan1"
+                app:layout_constraintStart_toStartOf="@+id/namaMakanan1" />
+
+            <EditText
+                android:id="@+id/jumlahMakanan1"
+                android:layout_width="58dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="5dp"
+                android:ems="10"
+                android:hint="@string/_0"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/hargaMakanan1"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/namaMakanan2"
+                android:layout_width="145dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/nama_makanan"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namaMakanan1" />
+
+            <EditText
+                android:id="@+id/hargaMakanan2"
+                android:layout_width="171dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="145dp"
+                android:ems="10"
+                android:hint="@string/harga"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/namaMakanan2"
+                app:layout_constraintStart_toStartOf="@+id/namaMakanan2" />
+
+            <EditText
+                android:id="@+id/jumlahMakanan2"
+                android:layout_width="58dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="5dp"
+                android:ems="10"
+                android:hint="@string/_0"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/hargaMakanan2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/namaMakanan3"
+                android:layout_width="145dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="16dp"
+                android:ems="10"
+                android:hint="@string/nama_makanan"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namaMakanan2" />
+
+            <EditText
+                android:id="@+id/hargaMakanan3"
+                android:layout_width="171dp"
+                android:layout_height="57dp"
+                android:ems="10"
+                android:hint="@string/harga"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/namaMakanan3"
+                app:layout_constraintStart_toEndOf="@+id/namaMakanan3" />
+
+            <EditText
+                android:id="@+id/jumlahMakanan3"
+                android:layout_width="58dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="5dp"
+                android:ems="10"
+                android:hint="@string/_0"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/hargaMakanan3"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/hitungButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:onClick="hitung"
+                android:text="@string/hitung"
+                android:textColor="@color/Putih"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namaMakanan3"
+                app:layout_constraintVertical_bias="0.135" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_bayar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/tv_jumlah3"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="14dp"
+                android:background="@color/ungumuda"
+                android:text="@string/jumlah"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_harga3"
+                app:layout_constraintStart_toEndOf="@+id/tv_harga3" />
+
+            <TextView
+                android:id="@+id/tv_harga3"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/ungumuda"
+                android:text="@string/harga"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_hargaMakanan3"
+                app:layout_constraintStart_toEndOf="@+id/tv_hargaMakanan3" />
+
+            <TextView
+                android:id="@+id/nomormeja2"
+                android:layout_width="114dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/nomor_meja"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_hasilMakanan1"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:background="@color/ungumuda"
+                android:text="@string/nama_makanan"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomormeja2" />
+
+            <TextView
+                android:id="@+id/tv_harga1"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/ungumuda"
+                android:text="@string/harga"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_hasilMakanan1"
+                app:layout_constraintStart_toEndOf="@+id/tv_hasilMakanan1" />
+
+            <TextView
+                android:id="@+id/tv_jumlah1"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="14dp"
+                android:background="@color/ungumuda"
+                android:text="@string/jumlah"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_harga1"
+                app:layout_constraintStart_toEndOf="@+id/tv_harga1" />
+
+            <TextView
+                android:id="@+id/tv_total1"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@color/ungumuda"
+                android:text="@string/total"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_jumlah1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_jumlah1" />
+
+            <TextView
+                android:id="@+id/tv_namaMakanan2"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:background="@color/ungumuda"
+                android:text="@string/nama_makanan"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hasilMakanan1" />
+
+            <TextView
+                android:id="@+id/tv_harga2"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/ungumuda"
+                android:text="@string/harga"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_namaMakanan2"
+                app:layout_constraintStart_toEndOf="@+id/tv_namaMakanan2" />
+
+            <TextView
+                android:id="@+id/tv_jumlah2"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="14dp"
+                android:background="@color/ungumuda"
+                android:text="@string/jumlah"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_harga2"
+                app:layout_constraintStart_toEndOf="@+id/tv_harga2" />
+
+            <TextView
+                android:id="@+id/tv_total2"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@color/ungumuda"
+                android:text="@string/total"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_jumlah2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_jumlah2" />
+
+            <TextView
+                android:id="@+id/tv_hargaMakanan3"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/ungumuda"
+                android:text="@string/nama_makanan"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_namaMakanan2" />
+
+            <TextView
+                android:id="@+id/tv_total3"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:background="@color/ungumuda"
+                android:text="@string/total"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_jumlah3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_jumlah3" />
+
+            <TextView
+                android:id="@+id/tv_grandtotal"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="76dp"
+                android:text="@string/grand_total"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hargaMakanan3" />
+
+            <Button
+                android:id="@+id/buttonKembali1"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="116dp"
+                android:background="@drawable/button"
+                android:text="@string/kembali_ke_meja"
+                android:textColor="@color/Putih"
+                android:onClick="kembaliKeMeja"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_grandtotal"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/buttonKembali2"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="48dp"
+                android:onClick="kembaliKeMenu"
+                android:background="@drawable/button"
+                android:text="@string/kembali_ke_menu"
+                android:textColor="@color/Putih"
+                app:layout_constraintBaseline_toBaselineOf="@+id/buttonKembali1"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
